@@ -1,13 +1,13 @@
-from core.query_processor import build_query
 from core.retrieval import retrieve_wikipedia_data
 from speech.whisper_test import transcribe_audio
 from speech.audio_recorder import record_audio
 from core.slide_renderer import show_slide
+from core.query_processor import clean_query
 
 record_audio()  # This creates output.wav
 speech_text = transcribe_audio()
 
-query = build_query(speech_text)
+query = clean_query(speech_text)
 
 print("\nSearch Query:")
 print(query)
